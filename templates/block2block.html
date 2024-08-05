@@ -1,0 +1,468 @@
+{% extends 'war/base.html' %}
+{% block body %}
+<div class="background-image"></div>
+<h2 style="color: white;">Transfer Products</h2>
+
+<!-- Main buttons to show sub-buttons for transfers -->
+<div class="button-grids2s">
+    <button onclick="showSubButtons('T')">Transfer from T-house</button>
+    <button onclick="showSubButtons('Q')">Transfer from Q-house</button>
+    <button onclick="showSubButtons('Z')">Transfer from Z-house</button>
+    <button onclick="showSubButtons('Y')">Transfer from Y-house</button>
+    <button onclick="showSubButtons('A0')">Transfer from A0-house</button>
+    <button onclick="showSubButtons('N')">Transfer from N-house</button>
+    <button onclick="showSubButtons('U')">Transfer from U-house</button>
+    <button onclick="showSubButtons('G')">Transfer from G-house</button>
+    <button onclick="showSubButtons('X')">Transfer from X-house</button>
+    <button onclick="showSubButtons('J')">Transfer from J-house</button>
+    <button onclick="showSubButtons('V')">Transfer from V-house</button>
+    <button onclick="showSubButtons('H')">Transfer from H-house</button>
+    <button onclick="showSubButtons('R')">Transfer from R-house</button>
+    <button onclick="showSubButtons('HR')">Transfer from HR-house</button>
+    <button onclick="showSubButtons('A')">Transfer from A-house</button>
+    <button onclick="showSubButtons('C')">Transfer from C-house</button>
+    <button onclick="showSubButtons('K')">Transfer from K-house</button>
+</div>
+
+    <!-- Sub-buttons for transferring products from T-house to other warehouses -->
+    <div id="subButtonsT" class="button-grided" style="display: none;">
+        <button onclick="newone('T', 'Q')">T-house TO Q-house</button>
+        <button onclick="newone('T', 'Y')">T-house TO Y-house</button>
+        <button onclick="newone('T', 'Z')">T-house TO Z-house</button>
+        <button onclick="newone('T', 'A0')">T-house TO A0-house</button>
+        <button onclick="newone('T', 'N')">T-house TO N-house</button>
+        <button onclick="newone('T', 'U')">T-house TO U-house</button>
+        <button onclick="newone('T', 'G')">T-house TO G-house</button>
+        <button onclick="newone('T', 'X')">T-house TO X-house</button>
+        <button onclick="newone('T', 'J')">T-house TO J-house</button>
+        <button onclick="newone('T', 'V')">T-house TO V-house</button>
+        <button onclick="newone('T', 'H')">T-house TO H-house</button>
+        <button onclick="newone('T', 'R')">T-house TO R-house</button>
+        <button onclick="newone('T', 'HR')">T-house TO HR-house</button>
+        <button onclick="newone('T', 'A')">T-house TO A-house</button>
+        <button onclick="newone('T', 'C')">T-house TO C-house</button>
+        <button onclick="newone('T', 'K')">T-house TO K-house</button>
+    </div>
+    
+    <!-- Sub-buttons for transferring products from Q-house to other warehouses -->
+    <div id="subButtonsQ" class="button-grided" style="display: none;">
+        <button onclick="newone('Q', 'T')">Q-house TO T-house</button>
+        <button onclick="newone('Q', 'Y')">Q-house TO Y-house</button>
+        <button onclick="newone('Q', 'Z')">Q-house TO Z-house</button>
+        <button onclick="newone('Q', 'A0')">Q-house TO A0-house</button>
+        <button onclick="newone('Q', 'N')">Q-house TO N-house</button>
+        <button onclick="newone('Q', 'U')">Q-house TO U-house</button>
+        <button onclick="newone('Q', 'G')">Q-house TO G-house</button>
+        <button onclick="newone('Q', 'X')">Q-house TO X-house</button>
+        <button onclick="newone('Q', 'J')">Q-house TO J-house</button>
+        <button onclick="newone('Q', 'V')">Q-house TO V-house</button>
+        <button onclick="newone('Q', 'H')">Q-house TO H-house</button>
+        <button onclick="newone('Q', 'R')">Q-house TO R-house</button>
+        <button onclick="newone('Q', 'HR')">Q-house TO HR-house</button>
+        <button onclick="newone('Q', 'A')">Q-house TO A-house</button>
+        <button onclick="newone('Q', 'C')">Q-house TO C-house</button>
+        <button onclick="newone('Q', 'K')">Q-house TO K-house</button>
+    </div>
+    
+    <!-- Sub-buttons for transferring products from Z-house to other warehouses -->
+    <div id="subButtonsZ" class="button-grided" style="display: none;">
+        <button onclick="newone('Z', 'Q')">Z-house TO Q-house</button>
+        <button onclick="newone('Z', 'Y')">Z-house TO Y-house</button>
+        <button onclick="newone('Z', 'T')">Z-house TO T-house</button>
+        <button onclick="newone('Z', 'A0')">Z-house TO A0-house</button>
+        <button onclick="newone('Z', 'N')">Z-house TO N-house</button>
+        <button onclick="newone('Z', 'U')">Z-house TO U-house</button>
+        <button onclick="newone('Z', 'G')">Z-house TO G-house</button>
+        <button onclick="newone('Z', 'X')">Z-house TO X-house</button>
+        <button onclick="newone('Z', 'J')">Z-house TO J-house</button>
+        <button onclick="newone('Z', 'V')">Z-house TO V-house</button>
+        <button onclick="newone('Z', 'H')">Z-house TO H-house</button>
+        <button onclick="newone('Z', 'R')">Z-house TO R-house</button>
+        <button onclick="newone('Z', 'HR')">Z-house TO HR-house</button>
+        <button onclick="newone('Z', 'A')">Z-house TO A-house</button>
+        <button onclick="newone('Z', 'C')">Z-house TO C-house</button>
+        <button onclick="newone('Z', 'K')">Z-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsY" class="button-grided" style="display: none;">
+        <button onclick="newone('Y', 'Q')">Y-house TO Q-house</button>
+        <button onclick="newone('Y', 'Y')">Y-house TO A0-house</button>
+        <button onclick="newone('Y', 'T')">Y-house TO T-house</button>
+        <button onclick="newone('Y', 'Z')">Y-house TO Z-house</button>
+        <button onclick="newone('Y', 'N')">Y-house TO N-house</button>
+        <button onclick="newone('Y', 'U')">Y-house TO U-house</button>
+        <button onclick="newone('Y', 'G')">Y-house TO G-house</button>
+        <button onclick="newone('Y', 'X')">Y-house TO X-house</button>
+        <button onclick="newone('Y', 'J')">Y-house TO J-house</button>
+        <button onclick="newone('Y', 'V')">Y-house TO V-house</button>
+        <button onclick="newone('Y', 'H')">Y-house TO H-house</button>
+        <button onclick="newone('Y', 'R')">Y-house TO R-house</button>
+        <button onclick="newone('Y', 'HR')">Y-house TO HR-house</button>
+        <button onclick="newone('Y', 'A')">Y-house TO A-house</button>
+        <button onclick="newone('Y', 'C')">Y-house TO C-house</button>
+        <button onclick="newone('Y', 'K')">Y-house TO K-house</button>
+    </div>
+    <div id="subButtonsA0" class="button-grided" style="display: none;">
+        <button onclick="newone('A0', 'Q')">A0-house TO Q-house</button>
+        <button onclick="newone('A0', 'Y')">A0-house TO Y-house</button>
+        <button onclick="newone('A0', 'T')">A0-house TO T-house</button>
+        <button onclick="newone('A0', 'Z')">A0-house TO Z-house</button>
+        <button onclick="newone('A0', 'N')">A0-house TO N-house</button>
+        <button onclick="newone('A0', 'U')">A0-house TO U-house</button>
+        <button onclick="newone('A0', 'G')">A0-house TO G-house</button>
+        <button onclick="newone('A0', 'X')">A0-house TO X-house</button>
+        <button onclick="newone('A0', 'J')">A0-house TO J-house</button>
+        <button onclick="newone('A0', 'V')">A0-house TO V-house</button>
+        <button onclick="newone('A0', 'H')">A0-house TO H-house</button>
+        <button onclick="newone('A0', 'R')">A0-house TO R-house</button>
+        <button onclick="newone('A0', 'HR')">A0-house TO HR-house</button>
+        <button onclick="newone('A0', 'A')">A0-house TO A-house</button>
+        <button onclick="newone('A0', 'C')">A0-house TO C-house</button>
+        <button onclick="newone('A0', 'K')">A0-house TO K-house</button>
+    </div>
+    <div id="subButtonsN" class="button-grided" style="display: none;">
+        <button onclick="newone('N', 'Q')">N-house TO Q-house</button>
+        <button onclick="newone('N', 'Y')">N-house TO Y-house</button>
+        <button onclick="newone('N', 'T')">N-house TO T-house</button>
+        <button onclick="newone('N', 'Z')">N-house TO Z-house</button>
+        <button onclick="newone('N', 'N')">N-house TO A0-house</button>
+        <button onclick="newone('N', 'U')">N-house TO U-house</button>
+        <button onclick="newone('N', 'G')">N-house TO G-house</button>
+        <button onclick="newone('N', 'X')">N-house TO X-house</button>
+        <button onclick="newone('N', 'J')">N-house TO J-house</button>
+        <button onclick="newone('N', 'V')">N-house TO V-house</button>
+        <button onclick="newone('N', 'H')">N-house TO H-house</button>
+        <button onclick="newone('N', 'R')">N-house TO R-house</button>
+        <button onclick="newone('N', 'HR')">N-house TO HR-house</button>
+        <button onclick="newone('N', 'A')">N-house TO A-house</button>
+        <button onclick="newone('N', 'C')">N-house TO C-house</button>
+        <button onclick="newone('N', 'K')">N-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsU" class="button-grided" style="display: none;">
+        <button onclick="newone('U', 'Q')">U-house TO Q-house</button>
+        <button onclick="newone('U', 'Y')">U-house TO Y-house</button>
+        <button onclick="newone('U', 'T')">U-house TO T-house</button>
+        <button onclick="newone('U', 'Z')">U-house TO Z-house</button>
+        <button onclick="newone('U', 'U')">U-house TO A0-house</button>
+        <button onclick="newone('U', 'U')">U-house TO N-house</button>
+        <button onclick="newone('U', 'G')">U-house TO G-house</button>
+        <button onclick="newone('U', 'X')">U-house TO X-house</button>
+        <button onclick="newone('U', 'J')">U-house TO J-house</button>
+        <button onclick="newone('U', 'V')">U-house TO V-house</button>
+        <button onclick="newone('U', 'H')">U-house TO H-house</button>
+        <button onclick="newone('U', 'R')">U-house TO R-house</button>
+        <button onclick="newone('U', 'HR')">U-house TO HR-house</button>
+        <button onclick="newone('U', 'A')">U-house TO A-house</button>
+        <button onclick="newone('U', 'C')">U-house TO C-house</button>
+        <button onclick="newone('U', 'K')">U-house TO K-house</button>
+    </div>
+
+
+    <div id="subButtonsG" class="button-grided" style="display: none;">
+        <button onclick="newone('G', 'Q')">G-house TO Q-house</button>
+        <button onclick="newone('G', 'Y')">G-house TO Y-house</button>
+        <button onclick="newone('G', 'T')">G-house TO T-house</button>
+        <button onclick="newone('G', 'Z')">G-house TO Z-house</button>
+        <button onclick="newone('G', 'G')">G-house TO A0-house</button>
+        <button onclick="newone('G', 'G')">G-house TO N-house</button>
+        <button onclick="newone('G', 'G')">G-house TO U-house</button>
+        <button onclick="newone('G', 'X')">G-house TO X-house</button>
+        <button onclick="newone('G', 'J')">G-house TO J-house</button>
+        <button onclick="newone('G', 'V')">G-house TO V-house</button>
+        <button onclick="newone('G', 'H')">G-house TO H-house</button>
+        <button onclick="newone('G', 'R')">G-house TO R-house</button>
+        <button onclick="newone('G', 'HR')">G-house TO HR-house</button>
+        <button onclick="newone('G', 'A')">G-house TO A-house</button>
+        <button onclick="newone('G', 'C')">G-house TO C-house</button>
+        <button onclick="newone('G', 'K')">G-house TO K-house</button>
+    </div>
+
+
+    <div id="subButtonsX" class="button-grided" style="display: none;">
+        <button onclick="newone('X', 'Q')">X-house TO Q-house</button>
+        <button onclick="newone('X', 'Y')">X-house TO Y-house</button>
+        <button onclick="newone('X', 'T')">X-house TO T-house</button>
+        <button onclick="newone('X', 'Z')">X-house TO Z-house</button>
+        <button onclick="newone('X', 'X')">X-house TO A0-house</button>
+        <button onclick="newone('X', 'X')">X-house TO N-house</button>
+        <button onclick="newone('X', 'X')">X-house TO U-house</button>
+        <button onclick="newone('X', 'X')">X-house TO G-house</button>
+        <button onclick="newone('X', 'J')">X-house TO J-house</button>
+        <button onclick="newone('X', 'V')">X-house TO V-house</button>
+        <button onclick="newone('X', 'H')">X-house TO H-house</button>
+        <button onclick="newone('X', 'R')">X-house TO R-house</button>
+        <button onclick="newone('X', 'HR')">X-house TO HR-house</button>
+        <button onclick="newone('X', 'A')">X-house TO A-house</button>
+        <button onclick="newone('X', 'C')">X-house TO C-house</button>
+        <button onclick="newone('X', 'K')">X-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsJ" class="button-grided" style="display: none;">
+        <button onclick="newone('J', 'Q')">J-house TO Q-house</button>
+        <button onclick="newone('J', 'Y')">J-house TO Y-house</button>
+        <button onclick="newone('J', 'T')">J-house TO T-house</button>
+        <button onclick="newone('J', 'Z')">J-house TO Z-house</button>
+        <button onclick="newone('J', 'A0')">J-house TO A0-house</button>
+        <button onclick="newone('J', 'N')">J-house TO N-house</button>
+        <button onclick="newone('J', 'U')">J-house TO U-house</button>
+        <button onclick="newone('J', 'G')">J-house TO G-house</button>
+        <button onclick="newone('J', 'X')">J-house TO X-house</button>
+        <button onclick="newone('J', 'V')">J-house TO V-house</button>
+        <button onclick="newone('J', 'H')">J-house TO H-house</button>
+        <button onclick="newone('J', 'R')">J-house TO R-house</button>
+        <button onclick="newone('J', 'HR')">J-house TO HR-house</button>
+        <button onclick="newone('J', 'A')">J-house TO A-house</button>
+        <button onclick="newone('J', 'C')">J-house TO C-house</button>
+        <button onclick="newone('J', 'K')">J-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsV" class="button-grided" style="display: none;">
+        <button onclick="newone('V', 'Q')">V-house TO Q-house</button>
+        <button onclick="newone('V', 'Y')">V-house TO Y-house</button>
+        <button onclick="newone('V', 'T')">V-house TO T-house</button>
+        <button onclick="newone('V', 'Z')">V-house TO Z-house</button>
+        <button onclick="newone('V', 'A0')">V-house TO A0-house</button>
+        <button onclick="newone('V', 'N')">V-house TO N-house</button>
+        <button onclick="newone('V', 'U')">V-house TO U-house</button>
+        <button onclick="newone('V', 'G')">V-house TO G-house</button>
+        <button onclick="newone('V', 'X')">V-house TO X-house</button>
+        <button onclick="newone('V', 'J')">V-house TO J-house</button>
+        <button onclick="newone('V', 'H')">V-house TO H-house</button>
+        <button onclick="newone('V', 'R')">V-house TO R-house</button>
+        <button onclick="newone('V', 'HR')">V-house TO HR-house</button>
+        <button onclick="newone('V', 'A')">V-house TO A-house</button>
+        <button onclick="newone('V', 'C')">V-house TO C-house</button>
+        <button onclick="newone('V', 'K')">V-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsH" class="button-grided" style="display: none;">
+        <button onclick="newone('H', 'Q')">H-house TO Q-house</button>
+        <button onclick="newone('H', 'Y')">H-house TO Y-house</button>
+        <button onclick="newone('H', 'T')">H-house TO T-house</button>
+        <button onclick="newone('H', 'Z')">H-house TO Z-house</button>
+        <button onclick="newone('H', 'A0')">H-house TO A0-house</button>
+        <button onclick="newone('H', 'N')">H-house TO N-house</button>
+        <button onclick="newone('H', 'U')">H-house TO U-house</button>
+        <button onclick="newone('H', 'G')">H-house TO G-house</button>
+        <button onclick="newone('H', 'X')">H-house TO X-house</button>
+        <button onclick="newone('H', 'J')">H-house TO J-house</button>
+        <button onclick="newone('H', 'V')">H-house TO V-house</button>
+        <button onclick="newone('H', 'R')">H-house TO R-house</button>
+        <button onclick="newone('H', 'HR')">H-house TO HR-house</button>
+        <button onclick="newone('H', 'A')">H-house TO A-house</button>
+        <button onclick="newone('H', 'C')">H-house TO C-house</button>
+        <button onclick="newone('H', 'K')">H-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsR" class="button-grided" style="display: none;">
+        <button onclick="newone('R', 'Q')">R-house TO Q-house</button>
+        <button onclick="newone('R', 'Y')">R-house TO Y-house</button>
+        <button onclick="newone('R', 'T')">R-house TO T-house</button>
+        <button onclick="newone('R', 'Z')">R-house TO Z-house</button>
+        <button onclick="newone('R', 'A0')">R-house TO A0-house</button>
+        <button onclick="newone('R', 'N')">R-house TO N-house</button>
+        <button onclick="newone('R', 'U')">R-house TO U-house</button>
+        <button onclick="newone('R', 'G')">R-house TO G-house</button>
+        <button onclick="newone('R', 'X')">R-house TO X-house</button>
+        <button onclick="newone('R', 'J')">R-house TO J-house</button>
+        <button onclick="newone('R', 'V')">R-house TO V-house</button>
+        <button onclick="newone('R', 'H')">R-house TO H-house</button>
+        <button onclick="newone('R', 'RR')">R-house TO RR-house</button>
+        <button onclick="newone('R', 'A')">R-house TO A-house</button>
+        <button onclick="newone('R', 'C')">R-house TO C-house</button>
+        <button onclick="newone('R', 'K')">R-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsHR" class="button-grided" style="display: none;">
+        <button onclick="newone('HR', 'Q')">HR-house TO Q-house</button>
+        <button onclick="newone('HR', 'Y')">HR-house TO Y-house</button>
+        <button onclick="newone('HR', 'T')">HR-house TO T-house</button>
+        <button onclick="newone('HR', 'Z')">HR-house TO Z-house</button>
+        <button onclick="newone('HR', 'A0')">HR-house TO A0-house</button>
+        <button onclick="newone('HR', 'N')">HR-house TO N-house</button>
+        <button onclick="newone('HR', 'U')">HR-house TO U-house</button>
+        <button onclick="newone('HR', 'G')">HR-house TO G-house</button>
+        <button onclick="newone('HR', 'X')">HR-house TO X-house</button>
+        <button onclick="newone('HR', 'J')">HR-house TO J-house</button>
+        <button onclick="newone('HR', 'V')">HR-house TO V-house</button>
+        <button onclick="newone('HR', 'H')">HR-house TO H-house</button>
+        <button onclick="newone('HR', 'R')">HR-house TO R-house</button>
+        <button onclick="newone('HR', 'A')">HR-house TO A-house</button>
+        <button onclick="newone('HR', 'C')">HR-house TO C-house</button>
+        <button onclick="newone('HR', 'K')">HR-house TO K-house</button>
+    </div>
+    <div id="subButtonsA" class="button-grided" style="display: none;">
+        <button onclick="newone('A', 'Q')">A-house TO Q-house</button>
+        <button onclick="newone('A', 'Y')">A-house TO Y-house</button>
+        <button onclick="newone('A', 'T')">A-house TO T-house</button>
+        <button onclick="newone('A', 'Z')">A-house TO Z-house</button>
+        <button onclick="newone('A', 'A0')">A-house TO A0-house</button>
+        <button onclick="newone('A', 'N')">A-house TO N-house</button>
+        <button onclick="newone('A', 'U')">A-house TO U-house</button>
+        <button onclick="newone('A', 'G')">A-house TO G-house</button>
+        <button onclick="newone('A', 'X')">A-house TO X-house</button>
+        <button onclick="newone('A', 'J')">A-house TO J-house</button>
+        <button onclick="newone('A', 'V')">A-house TO V-house</button>
+        <button onclick="newone('A', 'H')">A-house TO H-house</button>
+        <button onclick="newone('A', 'R')">A-house TO R-house</button>
+        <button onclick="newone('A', 'HR')">A-house TO HR-house</button>
+        <button onclick="newone('A', 'C')">A-house TO C-house</button>
+        <button onclick="newone('A', 'K')">A-house TO K-house</button>
+    </div>
+
+
+    <div id="subButtonsC" class="button-grided" style="display: none;">
+        <button onclick="newone('C', 'Q')">C-house TO Q-house</button>
+        <button onclick="newone('C', 'Y')">C-house TO Y-house</button>
+        <button onclick="newone('C', 'T')">C-house TO T-house</button>
+        <button onclick="newone('C', 'Z')">C-house TO Z-house</button>
+        <button onclick="newone('C', 'C0')">C-house TO C0-house</button>
+        <button onclick="newone('C', 'N')">C-house TO N-house</button>
+        <button onclick="newone('C', 'U')">C-house TO U-house</button>
+        <button onclick="newone('C', 'G')">C-house TO G-house</button>
+        <button onclick="newone('C', 'X')">C-house TO X-house</button>
+        <button onclick="newone('C', 'J')">C-house TO J-house</button>
+        <button onclick="newone('C', 'V')">C-house TO V-house</button>
+        <button onclick="newone('C', 'H')">C-house TO H-house</button>
+        <button onclick="newone('C', 'R')">C-house TO R-house</button>
+        <button onclick="newone('C', 'HR')">C-house TO HR-house</button>
+        <button onclick="newone('C', 'A')">C-house TO A-house</button>
+        <button onclick="newone('C', 'K')">C-house TO K-house</button>
+    </div>
+
+    <div id="subButtonsK" class="button-grided" style="display: none;">
+        <button onclick="newone('K', 'Q')">K-house TO Q-house</button>
+        <button onclick="newone('K', 'Y')">K-house TO Y-house</button>
+        <button onclick="newone('K', 'T')">K-house TO T-house</button>
+        <button onclick="newone('K', 'Z')">K-house TO Z-house</button>
+        <button onclick="newone('K', 'K0')">K-house TO K0-house</button>
+        <button onclick="newone('K', 'N')">K-house TO N-house</button>
+        <button onclick="newone('K', 'U')">K-house TO U-house</button>
+        <button onclick="newone('K', 'G')">K-house TO G-house</button>
+        <button onclick="newone('K', 'X')">K-house TO X-house</button>
+        <button onclick="newone('K', 'J')">K-house TO J-house</button>
+        <button onclick="newone('K', 'V')">K-house TO V-house</button>
+        <button onclick="newone('K', 'H')">K-house TO H-house</button>
+        <button onclick="newone('K', 'R')">K-house TO R-house</button>
+        <button onclick="newone('K', 'HR')">K-house TO HR-house</button>
+        <button onclick="newone('K', 'A')">K-house TO A-house</button>
+        <button onclick="newone('K', 'C')">K-house TO C-house</button>
+    </div>
+    <form id="transferForm" style="display: none;" method="post" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <div class="form-container">
+            <input type="hidden" id="fromWarehouse" name="from_warehouse">
+            <input type="hidden" id="toWarehouse" name="to_warehouse">
+            <input type="hidden" id="productName" name="product_name">
+            <input type="hidden" id="slotId" name="slot_id">
+            
+            <label id="sourceLabel" for="sourceSelect">Source Product:</label>
+            <select id="sourceSelect" name="source_product_id" onchange="updateProductName()"></select>
+            <br>
+            <label id="destLabel" for="destSelect">Destination Slot:</label>
+            <select id="destSelect" name="dest_slot_id" onchange="updateSlotId()"></select>
+            <br>
+            
+            <div class="button-container">
+                <button type="submit">Transfer</button>
+                <button type="button" onclick="cancelTransfer()">Cancel</button>
+            </div>
+        </div>
+    </form>
+    
+<script>
+    // Function to show sub-buttons for a specific warehouse
+    function showSubButtons(warehouse) {
+        // Hide all sub-button containers
+        document.getElementById('subButtonsT').style.display = 'none';
+        document.getElementById('subButtonsQ').style.display = 'none';
+        document.getElementById('subButtonsZ').style.display = 'none';
+        document.getElementById('subButtonsY').style.display = 'none';
+
+        document.getElementById('subButtonsA0').style.display = 'none';
+        document.getElementById('subButtonsN').style.display = 'none';
+        document.getElementById('subButtonsU').style.display = 'none';
+        document.getElementById('subButtonsG').style.display = 'none';
+        document.getElementById('subButtonsX').style.display = 'none';
+        document.getElementById('subButtonsJ').style.display = 'none';
+        document.getElementById('subButtonsV').style.display = 'none';
+        document.getElementById('subButtonsH').style.display = 'none';
+        document.getElementById('subButtonsR').style.display = 'none';
+        document.getElementById('subButtonsHR').style.display = 'none';
+        document.getElementById('subButtonsC').style.display = 'none';
+        document.getElementById('subButtonsA').style.display = 'none';
+        document.getElementById('subButtonsK').style.display = 'none';
+
+        document.getElementById('subButtons' + warehouse).style.display = 'block';
+    }
+
+    // Function to initiate the transfer process and populate the form
+    function newone(from_warehouse, to_warehouse) {
+        fetch(`/get_products/${from_warehouse}/${to_warehouse}/`)
+            .then(response => response.json())
+            .then(data => {
+                let sourceProducts = data.source_products;
+                let destSlots = data.dest_slots;
+
+                let sourceSelect = document.getElementById('sourceSelect');
+                sourceSelect.innerHTML = '';
+                sourceProducts.forEach(product => {
+                    let option = document.createElement('option');
+                    option.value = product.id;
+                    option.text = `ID: ${product.id}, Product: ${product.product_name}, Warehouse: ${from_warehouse}`;
+                    option.setAttribute('data-product-name', product.product_name);
+                    sourceSelect.appendChild(option);
+                });
+
+                let destSelect = document.getElementById('destSelect');
+                destSelect.innerHTML = '';
+                destSlots.forEach(slot => {
+                    let option = document.createElement('option');
+                    option.value = slot.id;
+                    option.text = `ID: ${slot.id}, Warehouse: ${to_warehouse}`;
+                    destSelect.appendChild(option);
+                });
+
+                document.getElementById('fromWarehouse').value = from_warehouse;
+                document.getElementById('toWarehouse').value = to_warehouse;
+                document.getElementById('transferForm').action = `/transfer_products/${from_warehouse}/${to_warehouse}/`;
+                document.getElementById('sourceLabel').innerText = `Select Product from Source (Warehouse ${from_warehouse})`;
+                document.getElementById('destLabel').innerText = `Destination (Warehouse ${to_warehouse})`;
+                document.getElementById('transferForm').style.display = 'block';
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Function to update the product name in the hidden input field
+    function updateProductName() {
+        let sourceSelect = document.getElementById('sourceSelect');
+        let selectedOption = sourceSelect.options[sourceSelect.selectedIndex];
+        let productName = selectedOption.getAttribute('data-product-name');
+        document.getElementById('productName').value = productName;
+    }
+
+    // Function to update the slot ID in the hidden input field
+    function updateSlotId() {
+        let destSelect = document.getElementById('destSelect');
+        let slotId = destSelect.value;
+        document.getElementById('slotId').value = slotId;
+    }
+
+    // Function to validate the form before submission
+    function validateForm() {
+        let sourceSelect = document.getElementById('sourceSelect');
+        let destSelect = document.getElementById('destSelect');
+
+        if (sourceSelect.value === '' || destSelect.value === '') {
+            alert('Please select both source product and destination slot.');
+            return false;
+        }
+        return true;
+    }
+    function cancelTransfer() {
+    document.getElementById('transferForm').style.display = 'none';
+}
+
+</script>
+{% endblock %}
