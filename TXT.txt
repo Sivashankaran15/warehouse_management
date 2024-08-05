@@ -1,0 +1,792 @@
+{% extends 'war/base.html' %}
+{% block body %}
+
+<div class="background-image"></div>
+<h2 style="color: white;">Edit Product Status</h2>
+<h3 style="color: white;">Select Warehouse</h3>
+
+<div class="warehouse-selection">
+    <div class="button-gridss">
+        <button onclick="showTable('WarehouseQ')">Warehouse Q</button>
+        <button onclick="showTable('WarehouseT')">Warehouse T</button>
+        <button onclick="showTable('WarehouseY')">Warehouse Y</button>
+        <button onclick="showTable('WarehouseZ')">Warehouse Z</button>
+        <button onclick="showTable('WarehouseA0')">Warehouse A0</button>
+        <button onclick="showTable('WarehouseN')">Warehouse N</button>
+        <button onclick="showTable('WarehouseU')">Warehouse U</button>
+        <button onclick="showTable('WarehouseG')">Warehouse G</button>
+        <button onclick="showTable('WarehouseX')">Warehouse X</button>
+        <button onclick="showTable('WarehouseJ')">Warehouse J</button>
+        <button onclick="showTable('WarehouseV')">Warehouse V</button>
+        <button onclick="showTable('WarehouseH')">Warehouse H</button>
+        <button onclick="showTable('WarehouseR')">Warehouse R</button>
+        <button onclick="showTable('WarehouseHR')">Warehouse HR</button>
+        <button onclick="showTable('WarehouseA')">Warehouse A</button>
+        <button onclick="showTable('WarehouseC')">Warehouse C</button>
+        <button onclick="showTable('WarehouseK')">Warehouse K</button>
+    </div>
+</div>
+
+<div id="WarehouseQ" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse Q</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_q %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'Q' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<div id="WarehouseT" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse T</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_t %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'T' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div id="WarehouseY" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse Y</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_y %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'Y' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseZ" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse Z</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_z %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'Z' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div id="WarehouseA0" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse A0</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_a0 %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'A0' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div id="WarehouseN" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse N</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_n %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'N' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseU" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse U</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_u %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'U' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseG" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse G</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_u %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'G' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseG" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse G</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_u %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'G' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+<div id="WarehouseX" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse X</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_x %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'X' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseJ" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse J</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_j %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'J' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseV" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse V</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_v %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'V' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseH" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse H</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_h %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'H' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseR" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse R</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_r %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'R' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+
+<div id="WarehouseHR" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse HR</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_hr %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'HR' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseA" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse A</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_a %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'A' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseC" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse C</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_c %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'C' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<div id="WarehouseK" class="warehouse-table" style="display: none;">
+    <h3 style="color: white; text-align: center;">Warehouse K</h3>
+    <div class="table-wrapper">
+        <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in warehouse_k %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.product_status }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>
+                    <form action="{% url 'edit_product_status' 'K' product.id %}" method="post">
+                        {% csrf_token %}
+                        {% if product.product_status %}
+                        <input type="hidden" name="action" value="set_to_0">
+                        <button type="submit">REMOVE</button>
+                        {% else %}
+                        <select name="product_name" required>
+                            <option value="AC">AC</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="TV">TV</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                        <input type="hidden" name="action" value="set_to_1">
+                        <button type="submit">ADD</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<form action="{% url 'home' %}">
+    <button type="submit" class="back-button">Back to Home</button>
+</form>
+<script>
+    function showTable(warehouse) {
+        document.getElementById('WarehouseQ').style.display = 'none';
+        document.getElementById('WarehouseT').style.display = 'none';
+        document.getElementById('WarehouseY').style.display = 'none';
+        document.getElementById('WarehouseZ').style.display = 'none';
+        document.getElementById('WarehouseA0').style.display = 'none';
+        document.getElementById('WarehouseN').style.display = 'none';
+        document.getElementById('WarehouseU').style.display = 'none';
+        document.getElementById('WarehouseG').style.display = 'none';
+        document.getElementById('WarehouseX').style.display = 'none';
+        document.getElementById('WarehouseJ').style.display = 'none';
+        document.getElementById('WarehouseV').style.display = 'none';
+        document.getElementById('WarehouseH').style.display = 'none';
+        document.getElementById('WarehouseR').style.display = 'none';
+        document.getElementById('WarehouseHR').style.display = 'none';
+        document.getElementById('WarehouseA').style.display = 'none';
+        document.getElementById('WarehouseC').style.display = 'none';
+        document.getElementById('WarehouseK').style.display = 'none';
+
+        if (warehouse) {
+            document.getElementById(warehouse).style.display = 'block';
+        }
+    }
+
+</script>
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

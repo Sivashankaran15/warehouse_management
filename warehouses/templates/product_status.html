@@ -1,0 +1,91 @@
+{% extends 'war/base.html' %}
+{% block body %}
+<div class="background-image"></div>
+<div class="container">
+    <!-- <h2>Warehouse Management System</h2> -->
+    <h2>PRODUCT STATUS</h2>
+    <!-- Display messages -->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="message {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <!-- Display warehouse statuses -->
+    <div class="status">
+        <div class="status-box">
+            <h3>Warehouse Q Status</h3>
+            <p>{{ warehouse_q_status }} / {{ warehouse_q_total }}</p>
+        </div>
+        <div class="status-box">
+            <h3>Warehouse T Status</h3>
+            <p>{{ warehouse_t_status }} / {{ warehouse_t_total }}</p>
+        </div>
+        <div class="status-box">
+            <h3>Warehouse Y Status</h3>
+            <p>{{ warehouse_y_status }} / {{ warehouse_y_total }}</p>
+        </div>
+
+        <div class="status-box">
+            <h3>Warehouse Z Status</h3>
+            <p>{{ warehouse_z_status }} / {{ warehouse_z_total }}</p>
+        </div>
+    
+        <div class="status-box">
+            <h3>Warehouse A0 Status</h3>
+            <p>{{ warehouse_a0_status }} / {{ warehouse_a0_total }}</p>
+        </div>    
+        <div class="status-box">
+            <h3>Warehouse N Status</h3>
+            <p>{{ warehouse_n_status }} / {{ warehouse_n_total }}</p>
+        </div>    
+        <div class="status-box">
+            <h3>Warehouse U Status</h3>
+            <p>{{ warehouse_u_status }} / {{ warehouse_u_total }}</p>
+        </div>    
+        <div class="status-box">
+            <h3>Warehouse G Status</h3>
+            <p>{{ warehouse_g_status }} / {{ warehouse_g_total }}</p>
+        </div>          
+        <div class="status-box">
+            <h3>Warehouse X Status</h3>
+            <p>{{ warehouse_x_status }} / {{ warehouse_x_total }}</p>
+        </div>            
+        <div class="status-box">
+            <h3>Warehouse J Status</h3>
+            <p>{{ warehouse_j_status }} / {{ warehouse_j_total }}</p>
+        </div>        
+        <div class="status-box">
+            <h3>Warehouse V Status</h3>
+            <p>{{ warehouse_v_status }} / {{ warehouse_v_total }}</p>
+        </div>            
+        <div class="status-box">
+            <h3>Warehouse H Status</h3>
+            <p>{{ warehouse_h_status }} / {{ warehouse_h_total }}</p>
+        </div>     
+        <div class="status-box">
+            <h3>Warehouse R Status</h3>
+            <p>{{ warehouse_r_status }} / {{ warehouse_r_total }}</p>
+        </div>     
+        <div class="status-box">
+            <h3>Warehouse HR Status</h3>
+            <p>{{ warehouse_hr_status }} / {{ warehouse_hr_total }}</p>
+        </div>     
+        <div class="status-box">
+            <h3>Warehouse A Status</h3>
+            <p>{{ warehouse_a_status }} / {{ warehouse_a_total }}</p>
+        </div>             
+        <div class="status-box">
+            <h3>Warehouse C Status</h3>
+            <p>{{ warehouse_c_status }} / {{ warehouse_c_total }}</p>
+        </div>         
+        <div class="status-box">
+            <h3>Warehouse K Status</h3>
+            <p>{{ warehouse_k_status }} / {{ warehouse_k_total }}</p>
+        </div>       
+
+    </div>
+
+
+{% endblock body %}
