@@ -16,9 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7oytsf(r4$vj4k$#pgf6vbkl9tg47$6b&&sof^9z(r_ryj6eh)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -66,17 +66,15 @@ WSGI_APPLICATION = 'warehouse_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'warehouse17',
-        'USER': 'root',
-        'PASSWORD': 'siva1221',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
 
+import environ
+env =environ.Env()
+environ.Env.read_env()
+
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
